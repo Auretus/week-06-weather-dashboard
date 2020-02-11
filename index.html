@@ -9,6 +9,7 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
       crossorigin="anonymous"
     />
+    <script src="https://kit.fontawesome.com/4ef40172d8.js" crossorigin="anonymous"></script>
     <title>Weather Dashboard</title>
   </head>
   <body>
@@ -16,16 +17,82 @@
           <h1 class="text-center text-light py-3">Weather Dashboard</h1>
       </div>
       <div class="row">
-          <div class="col-lg-2">
-              <div class="container">
+          <div class="col-lg-2 bg-light">
+              <div class="container col-lg-12">
+                <div>
+                    <label for="citySearch" class=>Search for a City:</label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" id="citySearch" aria-label="City Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary btn-outline-info" type="button"><span class="fas fa-search text-white"></span></button>
+                        </div>
+                    </div>
+                </div>
 
-              <p>side nav goes here</p>
+              <ul class="list-group mb-3" id="searchHistory">
+                  <li class="list-group-item">Tokyo</li>
+                  <li class="list-group-item">Bangkok</li>
+                  <li class="list-group-item">Cairo</li>
+              </ul>
               </div>
           </div>
           <div class="col-lg-10">
-              <div class="container">
-
-              <p>main content goes here</p>
+              <div class="container-fluid">
+                <div class="card col-lg-12 mx-0">
+                    <div class="card-body" id="currentCity">
+                        <h2>Testville (2222-2-22) &#x1F324; </h2> 
+                        <p>Temperature: 23.3&#x00b0; C </p> 
+                        <p>Humidity: 33.3%</p>
+                        <p>Wind speed &amp; direction: 12 KPH NNE</p>
+                        <p>UV Index: <span class="badge badge-warning p-2">6.66</span></p>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <h3>5-Day Forecast:</h3>
+                    <div id="forecastCards" class="row">
+                        <div class="card bg-primary col-lg-2 mr-3">
+                            <div class="card-body text-light">
+                                <h3>2222-2-23</h3>
+                                <h1>&#x1F324;</h2>
+                                <p>Temp: 22.8&#x00b0; C</p>
+                                <p>Humidity: 34.3%</p>
+                            </div>
+                        </div>
+                        <div class="card bg-primary col-lg-2 mx-3">
+                            <div class="card-body text-light">
+                                <h3>2222-2-24</h3>
+                                <h1>&#x1F324;</h1>
+                                <p>Temp: 22.8&#x00b0; C</p>
+                                <p>Humidity: 34.3%</p>
+                            </div>
+                        </div>
+                        <div class="card bg-primary col-lg-2 mx-3">
+                            <div class="card-body text-light">
+                                <h3>2222-2-25</h3>
+                                <h1>&#x1F324;</h1>
+                                <p>Temp: 22.8&#x00b0; C</p>
+                                <p>Humidity: 34.3%</p>
+                            </div>
+                        </div>
+                        <div class="card bg-primary col-lg-2 mx-3">
+                            <div class="card-body text-light">
+                                <h3>2222-2-26</h3>
+                                <h1>&#x1F324;</h1>
+                                <p>Temp: 22.8&#x00b0; C</p>
+                                <p>Humidity: 34.3%</p>
+                            </div>
+                        </div>
+                        <div class="card bg-primary col-lg-2 ml-3">
+                            <div class="card-body text-light">
+                                <h3>2222-2-27</h3>
+                                <h1>&#x1F324;</h1>
+                                <p>Temp: 22.8&#x00b0; C</p>
+                                <p>Humidity: 34.3%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
               </div>
           </div>
 
