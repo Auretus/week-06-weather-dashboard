@@ -67,7 +67,7 @@ $(document).ready(function() {
         for (let i=0; i < data.list.length; i++) {
           // let's only look at the conditions around 3pm on any given day
           if (data.list[i].dt_txt.indexOf("15:00:00") !== -1) {
-            let card = $("<div>").addClass("card bg-dark border-light text-light col-lg-2 mx-2");
+            let card = $("<div>").addClass("card bg-dark border-light text-light col-2 mx-2");
             let body = $("<div>").addClass("card-body p-2");
             let title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
             let weatherIcon = $("<img>").prop("src", `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`);
