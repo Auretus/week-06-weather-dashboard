@@ -39,7 +39,7 @@ $(document).ready(function() {
         $("#currentDay").empty();
         
         // assemble the card
-        let weatherIcon = $("<img>").prop("src",`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
+        let weatherIcon = $("<img>").prop("src",`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`)
         let title = $("<h2>").text(data.name + " (" + new Date().toLocaleDateString() + ")").append(weatherIcon);
         let temperature = $("<p>").text(`Temperature: ${data.main.temp} °C`);
         let humidity = $("<p>").text(`Humidity: ${data.main.humidity}%`);
@@ -58,7 +58,7 @@ $(document).ready(function() {
   function get5DayForecast(location) {
     $.ajax({
       type: "GET",
-      url: `http://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`,
+      url: `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`,
       dataType: "json",
       success: function(data) {
         console.log(data);
@@ -70,7 +70,7 @@ $(document).ready(function() {
             let card = $("<div>").addClass("card bg-dark border-light text-light col-2 mx-2");
             let body = $("<div>").addClass("card-body p-2");
             let title = $("<h5>").addClass("card-title").text(new Date(data.list[i].dt_txt).toLocaleDateString());
-            let weatherIcon = $("<img>").prop("src", `http://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`);
+            let weatherIcon = $("<img>").prop("src", `https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}.png`);
             let temp = $("<p>").addClass("card-text").text(`Temp: ${data.list[i].main.temp_max} °C`);
             let humidity = $("<p>").addClass("card-text").text(`Humidity: ${data.list[i].main.humidity}%`)
 
@@ -85,7 +85,7 @@ $(document).ready(function() {
   function getUVIndex(latitude, longitude) {
     $.ajax({
       type: "GET",
-      url: `http://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${latitude}&lon=${longitude}`,
+      url: `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${latitude}&lon=${longitude}`,
       dataType: "json",
       success: function (data) {
         let uvSpan = $("<span>").addClass("badge p-2").text(data.value);
